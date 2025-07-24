@@ -1,0 +1,114 @@
+Script started on 2025-07-24 13:40:50+02:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+[?2004h]0;becky@becky-Parallels-Virtual-Platform: ~/project/wk3/1[01;32mbecky@becky-Parallels-Virtual-Platform[00m:[01;34m~/project/wk3/1[00m$ gdb ./org
+[?2004l[35;1mGNU gdb (Ubuntu 12.1-0ubuntu1~22.04.2) 12.1[m
+Copyright (C) 2022 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from [32m./org[m...
+[?2004h(gdb) r
+[?2004lStarting program: [32m/home/becky/project/wk3/1/org[m 
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "[32m/lib/x86_64-linux-gnu/libthread_db.so.1[m".
+Original array: 1 2 3 4 5 
+Modified array: 1 2 3 4 5 
+[Inferior 1 (process 5040) exited normally]
+[?2004h[?2004l[?2004h(gdb) break main
+[?2004lBreakpoint 1 at [34m0x555555555236[m: file [32morg.c[m, line 12.
+[?2004h(gdb) run
+[?2004lStarting program: [32m/home/becky/project/wk3/1/org[m 
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "[32m/lib/x86_64-linux-gnu/libthread_db.so.1[m".
+
+Breakpoint 1, [33mmain[m () at [32morg.c[m:12
+12	    [32mint[m [31m*[marray [31m=[m [31m([m[32mint[m [31m*)[m[01mmalloc[m[31m([m[35m5[m [31m*[m [01;34msizeof[m[31m([m[32mint[m[31m));[m
+[?2004h[?2004l[?2004h(gdb) next
+[?2004l13	    [01;34mif[m [31m([marray [31m==[m NULL[31m)[m [31m{[m
+[?2004h[?2004l[?2004h(gdb) 
+[?2004l18	    [01;34mfor[m [31m([m[32mint[m i [31m=[m [35m0[m[31m;[m i [31m<[m [35m5[m[31m;[m i[31m++)[m [31m{[m
+[?2004h[?2004l[?2004h(gdb) 
+[?2004l19	        array[31m[[mi[31m][m [31m=[m i [31m+[m [35m1[m[31m;[m
+[?2004h[?2004l[?2004h(gdb) 
+[?2004l18	    [01;34mfor[m [31m([m[32mint[m i [31m=[m [35m0[m[31m;[m i [31m<[m [35m5[m[31m;[m i[31m++)[m [31m{[m
+[?2004h[?2004l[?2004h(gdb) 
+[?2004l19	        array[31m[[mi[31m][m [31m=[m i [31m+[m [35m1[m[31m;[m
+[?2004h[?2004l[?2004h(gdb) 
+[?2004l18	    [01;34mfor[m [31m([m[32mint[m i [31m=[m [35m0[m[31m;[m i [31m<[m [35m5[m[31m;[m i[31m++)[m [31m{[m
+[?2004h[?2004l[?2004h(gdb) 
+[?2004l19	        array[31m[[mi[31m][m [31m=[m i [31m+[m [35m1[m[31m;[m
+[?2004h[?2004l[?2004h(gdb) 
+[?2004l18	    [01;34mfor[m [31m([m[32mint[m i [31m=[m [35m0[m[31m;[m i [31m<[m [35m5[m[31m;[m i[31m++)[m [31m{[m
+[?2004h[?2004l[?2004h(gdb) 
+[?2004l19	        array[31m[[mi[31m][m [31m=[m i [31m+[m [35m1[m[31m;[m
+[?2004h[?2004l[?2004h(gdb) 
+[?2004l18	    [01;34mfor[m [31m([m[32mint[m i [31m=[m [35m0[m[31m;[m i [31m<[m [35m5[m[31m;[m i[31m++)[m [31m{[m
+[?2004h[?2004l[?2004h(gdb) 
+[?2004l19	        array[31m[[mi[31m][m [31m=[m i [31m+[m [35m1[m[31m;[m
+[?2004h[?2004l[?2004h(gdb) 
+[?2004l18	    [01;34mfor[m [31m([m[32mint[m i [31m=[m [35m0[m[31m;[m i [31m<[m [35m5[m[31m;[m i[31m++)[m [31m{[m
+[?2004h[?2004l[?2004h(gdb) 
+[?2004l22	    [01mprintf[m[31m([m[31m"Original array: "[m[31m);[m
+[?2004h[?2004l[?2004h(gdb) 
+[?2004l23	    [01mprint_array[m[31m([marray[31m,[m [35m5[m[31m);[m
+[?2004h[?2004l[?2004h(gdb) 
+[?2004lOriginal array: 1 2 3 4 5 
+25	    [32mint[m [31m*[mptr [31m=[m array [31m+[m [35m5[m[31m;[m 
+[?2004h[?2004l[?2004h(gdb) print ptr
+[?2004l$1 = (int *[36m[m) [34m0x5555555550e0[m <[33m_start[m>
+[?2004h(gdb) print array
+[?2004l$2 = (int *[36m[m) [34m0x5555555592a0[m
+[?2004h(gdb) print a[K&array[4]
+[?2004l$3 = (int *[36m[m) [34m0x5555555592b0[m
+[?2004h(gdb) next
+[?2004l26	    [31m*[mptr [31m=[m [35m10[m[31m;[m 
+[?2004h[?2004l[?2004h(gdb) print ptr
+[?2004l$4 = (int *[36m[m) [34m0x5555555592b4[m
+[?2004h(gdb) [K(gdb) [K(gdb) [K(gdb) continue
+[?2004lContinuing.
+Modified array: 1 2 3 4 5 
+[Inferior 1 (process 5043) exited normally]
+[?2004h[?2004l[?2004h(gdb) cp org.c[K[K[K[K[K[K[K[Kquit
+[?2004l[?2004h]0;becky@becky-Parallels-Virtual-Platform: ~/project/wk3/1[01;32mbecky@becky-Parallels-Virtual-Platform[00m:[01;34m~/project/wk3/1[00m$ cp org.c fi[K[Kmodifi[K[K[K[K[K[Krevised_org.c
+[?2004l[?2004h]0;becky@becky-Parallels-Virtual-Platform: ~/project/wk3/1[01;32mbecky@becky-Parallels-Virtual-Platform[00m:[01;34m~/project/wk3/1[00m$ gcc -g revised[K]0;becky@becky-Parallels-Virtual-Platform: ~/project/wk3/1[01;32mbecky@becky-Parallels-Virtual-Platform[00m:[01;34m~/project/wk3/1[00m$ gcc -g revised[K]0;becky@becky-Parallels-Virtual-Platform: ~/project/wk3/1[01;32mbecky@becky-Parallels-Virtual-Platform[00m:[01;34m~/project/wk3/1[00m$ gcc -g revised[K]0;becky@becky-Parallels-Virtual-Platform: ~/project/wk3/1[01;32mbecky@becky-Parallels-Virtual-Platform[00m:[01;34m~/project/wk3/1[00m$ gcc -g revised[K]0;becky@becky-Parallels-Virtual-Platform: ~/project/wk3/1[01;32mbecky@becky-Parallels-Virtual-Platform[00m:[01;34m~/project/wk3/1[00m$ gcc -g revised[K]0;becky@becky-Parallels-Virtual-Platform: ~/project/wk3/1[01;32mbecky@becky-Parallels-Virtual-Platform[00m:[01;34m~/project/wk3/1[00m$ gcc -g revised[K]0;becky@becky-Parallels-Virtual-Platform: ~/project/wk3/1[01;32mbecky@becky-Parallels-Virtual-Platform[00m:[01;34m~/project/wk3/1[00m$ gcc -g revised[K]0;becky@becky-Parallels-Virtual-Platform: ~/project/wk3/1[01;32mbecky@becky-Parallels-Virtual-Platform[00m:[01;34m~/project/wk3/1[00m$ gcc -g revised[K]0;becky@becky-Parallels-Virtual-Platform: ~/project/wk3/1[01;32mbecky@becky-Parallels-Virtual-Platform[00m:[01;34m~/project/wk3/1[00m$ gcc -g revised[K]0;becky@becky-Parallels-Virtual-Platform: ~/project/wk3/1[01;32mbecky@becky-Parallels-Virtual-Platform[00m:[01;34m~/project/wk3/1[00m$ gcc -g revised[K]0;becky@becky-Parallels-Virtual-Platform: ~/project/wk3/1[01;32mbecky@becky-Parallels-Virtual-Platform[00m:[01;34m~/project/wk3/1[00m$ gcc -g revised[K]0;becky@becky-Parallels-Virtual-Platform: ~/project/wk3/1[01;32mbecky@becky-Parallels-Virtual-Platform[00m:[01;34m~/project/wk3/1[00m$ gcc -g revised[K]0;becky@becky-Parallels-Virtual-Platform: ~/project/wk3/1[01;32mbecky@becky-Parallels-Virtual-Platform[00m:[01;34m~/project/wk3/1[00m$ gcc -g revised[K]0;becky@becky-Parallels-Virtual-Platform: ~/project/wk3/1[01;32mbecky@becky-Parallels-Virtual-Platform[00m:[01;34m~/project/wk3/1[00m$ gcc -g revised[K]0;becky@becky-Parallels-Virtual-Platform: ~/project/wk3/1[01;32mbecky@becky-Parallels-Virtual-Platform[00m:[01;34m~/project/wk3/1[00m$ gcc -g revised[K]0;becky@becky-Parallels-Virtual-Platform: ~/project/wk3/1[01;32mbecky@becky-Parallels-Virtual-Platform[00m:[01;34m~/project/wk3/1[00m$ gcc -g revised[K]0;becky@becky-Parallels-Virtual-Platform: ~/project/wk3/1[01;32mbecky@becky-Parallels-Virtual-Platform[00m:[01;34m~/project/wk3/1[00m$ gcc -g revised[K]0;becky@becky-Parallels-Virtual-Platform: ~/project/wk3/1[01;32mbecky@becky-Parallels-Virtual-Platform[00m:[01;34m~/project/wk3/1[00m$ gcc -g revised[K]0;becky@becky-Parallels-Virtual-Platform: ~/project/wk3/1[01;32mbecky@becky-Parallels-Virtual-Platform[00m:[01;34m~/project/wk3/1[00m$ gcc -g revised_org.c -o revised_org.c
+[?2004l[01m[Kgcc:[m[K [01;31m[Kfatal error: [m[Kinput file ‘[01m[Krevised_org.c[m[K’ is the same as output file
+compilation terminated.
+[?2004h]0;becky@becky-Parallels-Virtual-Platform: ~/project/wk3/1[01;32mbecky@becky-Parallels-Virtual-Platform[00m:[01;34m~/project/wk3/1[00m$ gcc -g revised_org.c -o revised
+[?2004l[?2004h]0;becky@becky-Parallels-Virtual-Platform: ~/project/wk3/1[01;32mbecky@becky-Parallels-Virtual-Platform[00m:[01;34m~/project/wk3/1[00m$ gdb ./revised
+[?2004l[35;1mGNU gdb (Ubuntu 12.1-0ubuntu1~22.04.2) 12.1[m
+Copyright (C) 2022 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from [32m./revised[m...
+[?2004h(gdb) r
+[?2004lStarting program: [32m/home/becky/project/wk3/1/revised[m 
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "[32m/lib/x86_64-linux-gnu/libthread_db.so.1[m".
+Original array: 1 2 3 4 5 
+Modified array: 1 2 3 4 10 
+[Inferior 1 (process 5231) exited normally]
+[?2004h[?2004l[?2004h(gdb) quit
+[?2004l[?2004h]0;becky@becky-Parallels-Virtual-Platform: ~/project/wk3/1[01;32mbecky@becky-Parallels-Virtual-Platform[00m:[01;34m~/project/wk3/1[00m$ exit
+[?2004lexit
+
+Script done on 2025-07-24 13:54:31+02:00 [COMMAND_EXIT_CODE="0"]
