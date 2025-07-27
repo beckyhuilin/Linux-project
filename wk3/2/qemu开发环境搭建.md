@@ -109,22 +109,25 @@
 ### 3.2 形成根目录结构
 
 - 创建rootfs目录  
-    mkdir -p rootfs/{dev,etc/init.d,lib}  
-- 把busybox中的文件复制到rootfs根目录下   
- 
-    sudo cp -r busybox/_install/* rootfs/   
+  
+      mkdir -p rootfs/{dev,etc/init.d,lib}  
+- 把busybox中的文件复制到rootfs根目录下  
+   
+      sudo cp -r busybox/_install/* rootfs/   
  
 - 把交叉编译工具链中的库文件复制到rootfs根目录的lib文件夹下  
-    sudo cp -p /usr/arm-linux-gnueabihf/lib/* rootfs/lib/  
+  
+      sudo cp -p /usr/arm-linux-gnueabihf/lib/* rootfs/lib/  
  
 - 创建4个tty端终设备  
-    sudo mknod rootfs/dev/tty1 c 4 1
+  
+      sudo mknod rootfs/dev/tty1 c 4 1
 
-    sudo mknod rootfs/dev/tty2 c 4 2
+      sudo mknod rootfs/dev/tty2 c 4 2
 
-    sudo mknod rootfs/dev/tty3 c 4 3
+      sudo mknod rootfs/dev/tty3 c 4 3
 
-    sudo mknod rootfs/dev/tty4 c 4 4
+      sudo mknod rootfs/dev/tty4 c 4 4
 
 ### 3.3  制作根文件系统镜像  
 
