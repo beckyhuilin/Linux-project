@@ -1,10 +1,10 @@
 # Qemu
 ## 1 qemu安装
-### 1.1git clone
+### 1.1 git clone
     创建qemu文件夹目录，在此目录下
     git clone https://github.com/qemu/qemu.git
 
-### 1.2安装必要的库
+### 1.2 安装必要的库
      sudo apt-get install libglib2.0-dev
 
      sudo apt-get install libpixman-1-dev
@@ -13,7 +13,7 @@
 
      sudo apt-get install ninja-build
 
-### 1.3运行配置指令
+### 1.3 运行配置指令
     1)进入新克隆的qemu目录，新建build文件夹，输入  
     ../configure  
    （提示ERROR: python venv creation failed），则更新python如下：
@@ -40,11 +40,11 @@
     5)再次../configure
     成功
 
-### 1.4编译qemu 
+### 1.4 编译qemu 
     make -j16
-### 1.5安装qemu 
+### 1.5 安装qemu 
     sudo make install
-### 查看版本
+### 1.6 查看版本
     qemu-system-arm -version
    显示如下
 ![](https://github.com/beckyhuilin/Linux-project/blob/0673c1bd1997e9cd28b554c7dfd250853bf4537c/image/qemu_version.png)   
@@ -95,7 +95,7 @@
 
 ## 3 制作根文件  
 
-### 3.1下载busybox
+### 3.1 下载busybox
 
     wget http://busybox.net/downloads/busybox-1.36.0.tar.bz2
     tar -xjf busybox-1.36.0.tar.bz2
@@ -129,7 +129,7 @@
 
       sudo mknod rootfs/dev/tty4 c 4 4
 
-### 3.3  制作根文件系统镜像  
+### 3.3 制作根文件系统镜像  
 
    1）输入  
 
@@ -162,7 +162,7 @@
 
 ### 3.4 启动qemu 
  
-1)输入  
+1) 输入  
 
 qemu-system-arm \
   -M vexpress-a9 \
@@ -176,13 +176,13 @@ qemu-system-arm \
 (显示qemu-system-arm: No machine specified, and there is no default  
 Use -machine help to list supported machines)
 
-2）改成  
+2) 改成  
 
     qemu-system-arm -M vexpress-a9 -m 512M -kernel kernel/linux-6.12/arch/arm/boot/zImage -dtb kernel/linux-6.12/arch/arm/boot/dts/vexpress-v2p-ca9.dtb -nographic -append "root=/dev/mmcblk0 console=ttyAMA0" -drive file=./a9rootfs.ext3,format=raw,if=sd
 
 （显示Couldn't open dtb file kernel/linux-6.12/arch/arm/boot/dts/vexpress-v2p-ca9.dtb）
 
-3）检查  
+3) 检查  
 
     ls kernel/linux-6.12/arch/arm/boot/dts/vexpress-v2p-ca9.dtb
 （显示没有）则进入到6linux-6.12文件夹
@@ -190,28 +190,28 @@ Use -machine help to list supported machines)
     make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- dtbs
 (显示没有文件) 
 
-4)查找文件位置
+4) 查找文件位置
 
     find kernel/linux-6.12/arch/arm/boot/dts/vexpress-v2p-ca9.dtb
 (显示存在，但是在 arch/arm/boot/dts/arm/vexpress-v2p-ca9.dtb）
 
-5)修改后重新输入  
+5) 修改后重新输入  
 
     qemu-system-arm -M vexpress-a9 -m 512M -kernel kernel/linux-6.12/arch/arm/boot/zImage -dtb kernel/linux-6.12/arch/arm/boot/dts/arm/vexpress-v2p-ca9.dtb -nographic -append "root=/dev/mmcblk0 console=ttyAMA0" -drive file=./a9rootfs.ext3,format=raw,if=sd
 (显示file=./a9rootfs.ext3找不到)
 
-5)查找位置  
+6) 查找位置  
   
     find ~/project -name "a9rootfs.ext3"
 （得到/home/becky/project/wk3/2/qemu/a9rootfs.ext320124199804063245）
 
-6）修改后在qemu目录下重新输入  
+7) 修改后在qemu目录下重新输入  
 
     qemu-system-arm -M vexpress-a9 -m 512M -kernel kernel/linux-6.12/arch/arm/boot/zImage -dtb kernel/linux-6.12/arch/arm/boot/dts/arm/vexpress-v2p-ca9.dtb -nographic -append "root=/dev/mmcblk0 console=ttyAMA0" -drive file=/home/becky/project/wk3/2/qemu/a9rootfs.ext3,format=raw,if=sd
 
 （显示的是：QEMU 已经成功启动了 Linux 内核，也已经挂载了根文件系统，但 BusyBox 或 init 脚本缺失导致系统“卡在了 init 之后”）
 
-7）修改   
+8) 修改   
  
     mkdir -p etc/init.d
     nano etc/init.d/rcS  
@@ -242,7 +242,7 @@ Use -machine help to list supported machines)
 mount: mounting none on /proc failed: No such file or directory
 can't access tty; job control turned off）
 
-8）重新回到_install文件夹
+9) 重新回到_install文件夹
 
    mkdir -p proc sys
    在qemu文件下，重复镜像操作后再次启动
@@ -254,9 +254,9 @@ can't access tty; job control turned off）
 显示如下
 ![](https://github.com/beckyhuilin/Linux-project/blob/0673c1bd1997e9cd28b554c7dfd250853bf4537c/image/uname.png)  
 
-## 5共享目录  
+## 5 共享目录  
 
-### 5.1设置
+### 5.1 设置
 1）在ubuntu中输入  
 
     mkdir -p ~/shared
