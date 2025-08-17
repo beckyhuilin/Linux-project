@@ -169,6 +169,6 @@ static void __exit mychar_exit(void)
 module_init(mychar_init);
 module_exit(mychar_exit);
 MODULE_LICENSE("GPL");
-MODULE_AUTHOR("you");
+MODULE_AUTHOR("becky");
 MODULE_DESCRIPTION("Week4 Task2: dynamic buffer + ioctl");
 
